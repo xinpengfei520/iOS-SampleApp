@@ -39,7 +39,7 @@
 
 @end
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDataSource>
 
 @end
 
@@ -88,14 +88,35 @@
 //    view.frame = CGRectMake(100, 100, 100, 100);
 //    [self.view addSubview:view];
     
-    TestView *view2 = [[TestView alloc]init];
-    view2.backgroundColor = [UIColor greenColor];
-    view2.frame = CGRectMake(150, 150, 100, 100);
-    [self.view addSubview:view2];
+//    TestView *view2 = [[TestView alloc]init];
+//    view2.backgroundColor = [UIColor greenColor];
+//    view2.frame = CGRectMake(150, 150, 100, 100);
+//    [self.view addSubview:view2];
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushController)];
-    [view2 addGestureRecognizer:tapGesture];
+//    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushController)];
+//    [view2 addGestureRecognizer:tapGesture];
     
+    UITableView *tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
+    tableView.dataSource = self;
+    [self.view addSubview:tableView];
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+    }
+    
+    cell.textLabel.text = @"主标题";
+    cell.detailTextLabel.text = @"副标题";
+    cell.imageView.image = [UIImage imageNamed:@"icon.bundle/video@2x.png"];
+    return cell;
 }
 
 - (void)pushController{
