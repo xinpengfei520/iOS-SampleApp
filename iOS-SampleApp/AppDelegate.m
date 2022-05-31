@@ -6,8 +6,9 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -20,13 +21,16 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     UITabBarController *tabBarController= [[UITabBarController alloc]init];
-    tabBarController.tabBar.backgroundColor = [UIColor grayColor];
+    tabBarController.tabBar.backgroundColor = [UIColor whiteColor];
     
-    UIViewController *controller1 = [[UIViewController alloc]init];
-    controller1.view.backgroundColor = [UIColor redColor];
-    controller1.tabBarItem.title = @"新闻";
-    controller1.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page@2x.png"];
-    controller1.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
+    ViewController *viewController = [[ViewController alloc]init];
+
+    
+//    UIViewController *controller1 = [[UIViewController alloc]init];
+//    controller1.view.backgroundColor = [UIColor redColor];
+    viewController.tabBarItem.title = @"新闻";
+    viewController.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page@2x.png"];
+    viewController.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
     
     UIViewController *controller2 = [[UIViewController alloc]init];
     controller2.view.backgroundColor = [UIColor yellowColor];
@@ -46,14 +50,20 @@
     controller4.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/home@2x.png"];
     controller4.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/home_selected@2x.png"];
     
-    [tabBarController setViewControllers:@[controller1,controller2,controller3,controller4]];
+    [tabBarController setViewControllers:@[viewController,controller2,controller3,controller4]];
+    tabBarController.delegate = self;
     
-    self.window.rootViewController = tabBarController;
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:tabBarController];
+    
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     
     return YES;
 }
 
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    NSLog(@"did select");
+}
 
 #pragma mark - UISceneSession lifecycle
 
