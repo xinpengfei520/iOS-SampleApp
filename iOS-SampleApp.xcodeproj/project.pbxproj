@@ -15,6 +15,7 @@
 		F3AE5FBF2845B8DE00E95086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AE5FBE2845B8DE00E95086 /* main.m */; };
 		F3AE5FC62845D44E00E95086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3AE5FC52845D44E00E95086 /* Main.storyboard */; };
 		F3AE5FC82845F6DB00E95086 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F3AE5FC72845F6DB00E95086 /* icon.bundle */; };
+		F3AE5FCE28475A7200E95086 /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AE5FCD28475A7200E95086 /* GTVideoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		F3AE5FBE2845B8DE00E95086 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F3AE5FC52845D44E00E95086 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F3AE5FC72845F6DB00E95086 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
+		F3AE5FCC28475A7200E95086 /* GTVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoViewController.h; sourceTree = "<group>"; };
+		F3AE5FCD28475A7200E95086 /* GTVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 				F3AE5FBA2845B8DE00E95086 /* LaunchScreen.storyboard */,
 				F3AE5FBD2845B8DE00E95086 /* Info.plist */,
 				F3AE5FBE2845B8DE00E95086 /* main.m */,
+				F3AE5FCC28475A7200E95086 /* GTVideoViewController.h */,
+				F3AE5FCD28475A7200E95086 /* GTVideoViewController.m */,
 			);
 			path = "iOS-SampleApp";
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3AE5FB42845B8DC00E95086 /* ViewController.m in Sources */,
+				F3AE5FCE28475A7200E95086 /* GTVideoViewController.m in Sources */,
 				F3AE5FAE2845B8DC00E95086 /* AppDelegate.m in Sources */,
 				F3AE5FBF2845B8DE00E95086 /* main.m in Sources */,
 				F3AE5FB12845B8DC00E95086 /* SceneDelegate.m in Sources */,
